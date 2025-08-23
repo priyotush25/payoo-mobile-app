@@ -1,8 +1,9 @@
 // select element
-let loginButton = document.querySelector("#loginButton");
+let loginButton = document.getElementById("loginButton");
 let inputNumber = document.getElementById("inputNumber");
 let inputPin = document.getElementById("inputPin");
 
+// addEventListener
 loginButton.addEventListener("click", function (e) {
   e.preventDefault();
 
