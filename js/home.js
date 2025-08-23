@@ -27,6 +27,23 @@ addMoneyButton.addEventListener("click", function (e) {
   document.getElementById("balance").innerText = totalAmount;
 });
 
+// cash out operation
+let withdrawButton = document.getElementById("cashout-btn");
+
+withdrawButton.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  let availableAmount = parseInt(document.getElementById("balance").innerText);
+
+  let cashOutAmount = parseInt(
+    document.getElementById("cashout-input-amount").value
+  );
+
+  let presentAmount = availableAmount - cashOutAmount;
+
+  document.getElementById("balance").innerText = presentAmount;
+});
+
 // toggle operation
 
 let addMoneySection = document.getElementById("add-money-section");
@@ -36,8 +53,6 @@ let transferSection = document.getElementById("transfer-money-section");
 let addMoneySectionButton = document.getElementById("add-money-section-btn");
 let cashOutSectionButton = document.getElementById("cash-out-section-btn");
 let transferSectionButton = document.getElementById("transfer-money-btn");
-
-// transfer-money-btn
 
 addMoneySectionButton.addEventListener("click", function () {
   addMoneySection.style.display = "block";
