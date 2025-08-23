@@ -1,3 +1,16 @@
+// get inner text
+function getInnerText(id) {
+  let element = document.getElementById(id).innerText;
+  let elementValue = parseInt(element);
+
+  return elementValue;
+}
+
+// set inner text
+function setInnerText(value) {
+  document.getElementById("balance").innerText = value;
+}
+
 // add money function
 function getInputValue(id) {
   let getResult = document.getElementById(id).value;
@@ -26,41 +39,12 @@ document
       return;
     }
 
-    let availableBalance = document.getElementById("balance").innerText;
-    let convertBalance = parseInt(availableBalance);
+    let convertBalance = getInnerText("balance");
 
     let totalAmount = convertBalance + addMoney;
 
-    document.getElementById("balance").innerText = totalAmount;
+    setInnerText(totalAmount);
   });
-
-// toggle operation
-
-let addMoneySection = document.getElementById("add-money-section");
-let cashOutSection = document.getElementById("cash-out-section");
-let transferSection = document.getElementById("transfer-money-section");
-
-let addMoneySectionButton = document.getElementById("add-money-section-btn");
-let cashOutSectionButton = document.getElementById("cash-out-section-btn");
-let transferSectionButton = document.getElementById("transfer-money-btn");
-
-addMoneySectionButton.addEventListener("click", function () {
-  addMoneySection.style.display = "block";
-  cashOutSection.style.display = "none";
-  transferSection.style.display = "none";
-});
-
-cashOutSectionButton.addEventListener("click", function () {
-  cashOutSection.style.display = "block";
-  addMoneySection.style.display = "none";
-  transferSection.style.display = "none";
-});
-
-transferSectionButton.addEventListener("click", function () {
-  transferSection.style.display = "block";
-  addMoneySection.style.display = "none";
-  cashOutSection.style.display = "none";
-});
 
 // cash out function
 
@@ -77,8 +61,7 @@ document.getElementById("cash-out-btn").addEventListener("click", function (e) {
   let cashOutAmount = getValue("cash-out-input-amount");
   let cashOutPinNumber = getValue("cash-out-pin-number");
 
-  let originalBalance = document.getElementById("balance");
-  let convertBalance = parseInt(originalBalance.innerText);
+  let convertBalance = getInnerText("balance");
 
   // condition checking
   if (cashOutAgentNumber.toString().length < 11) {
@@ -97,5 +80,36 @@ document.getElementById("cash-out-btn").addEventListener("click", function (e) {
   }
 
   let presentBalance = convertBalance - cashOutAmount;
-  originalBalance.innerText = presentBalance;
+
+  setInnerText(presentBalance);
 });
+
+// toggle features
+function toggleFeature(id) {
+  let forms = document.getElementsByClassName("form");
+  for (let form of forms) {
+    form.style.display = "none";
+
+    console.log(form);
+  }
+
+  document.getElementById(id).style.display = "block";
+}
+
+document
+  .getElementById("add-money-section-btn")
+  .addEventListener("click", function () {
+    toggleFeature("add-money-section");
+  });
+
+document
+  .getElementById("cash-out-section-btn")
+  .addEventListener("click", function () {
+    toggleFeature("cash-out-section");
+  });
+
+document
+  .getElementById("transfer-money-btn")
+  .addEventListener("click", function () {
+    toggleFeature("transfer-money-section");
+  });
