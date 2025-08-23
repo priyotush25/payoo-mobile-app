@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payoo Mobile App</title>
 
     <!-- Tailwind cnd link -->
-     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#F4F5F7] h-screen flex items-center justify-center">
-
-         <div class="border-2 w-[300px] h-[150px]">
-            <img src="./" alt="">
-
-
-            
-        </div>
-    <div class="w-[450px] p-8 mx-auto border-2 bg-[#FFFFFF] rounded-3xl">
-        <form class="flex flex-col items-start">
-            <label for="mobile-number" class="mb-3 text-[#080808] font-semibold">Mobile Number </label>
-            <input type="tel" id="mobile-number" placeholder="Enter your number" class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]">
-
-            <label for="pin-mumber" class="mb-3  text-[#080808] font-semibold">4 Digit Pin</label>
-            <input type="number"  id="pin-mumber" placeholder="Enter 4 Digit Pin" class="w-full px-5 py-4 rounded-[32px] mb-5 bg-[#F4F5F7]">
-
-            <button class="w-full text-center text-xl font-semibold text-white bg-[#0874F2] px-5 py-4 rounded-[32px]">Login</button>
-        </form>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[#F4F5F7] h-screen flex items-center justify-center flex-col">
+    <!-- top img -->
+    <div
+      class="w-[400px] h-[150px] flex flex-col justify-center items-center bg-[url(./assets/bg.png)] bg-no-repeat bg-cover"
+    >
+      <img src="./assets/Group.png" alt="" class="z-10" />
     </div>
-</body>
+
+    <!-- form section -->
+
+    <div class="w-[450px] p-8 mx-auto border-2 bg-[#FFFFFF] rounded-3xl">
+      <form class="flex flex-col items-start">
+        <label for="mobile-number" class="mb-3 text-[#080808] font-semibold"
+          >Mobile Number
+        </label>
+        <input
+          type="tel"
+          id="mobile-number"
+          placeholder="Enter your number"
+          class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]"
+        />
+
+        <label for="pin-mumber" class="mb-3 text-[#080808] font-semibold"
+          >4 Digit Pin</label
+        >
+        <input
+          type="number"
+          id="pin-mumber"
+          placeholder="Enter 4 Digit Pin"
+          class="w-full px-5 py-4 rounded-[32px] mb-5 bg-[#F4F5F7]"
+        />
+
+        <button
+          class="w-full text-center text-xl font-semibold text-white bg-[#0874F2] px-5 py-4 rounded-[32px]"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </body>
 </html>
