@@ -25,30 +25,34 @@ addMoneyButton.addEventListener("click", function (e) {
   let totalAmount = selectMoney + selectBalance;
 
   document.getElementById("balance").innerText = totalAmount;
-
-  console.log(
-    selectBank,
-    selectAccountNumber,
-    selectMoney,
-    selectPin,
-    selectBalance
-  );
 });
 
 // toggle operation
 
 let addMoneySection = document.getElementById("add-money-section");
 let cashOutSection = document.getElementById("cash-out-section");
+let transferSection = document.getElementById("transfer-money-section");
 
 let addMoneySectionButton = document.getElementById("add-money-section-btn");
 let cashOutSectionButton = document.getElementById("cash-out-section-btn");
+let transferSectionButton = document.getElementById("transfer-money-btn");
+
+// transfer-money-btn
 
 addMoneySectionButton.addEventListener("click", function () {
   addMoneySection.style.display = "block";
   cashOutSection.style.display = "none";
+  transferSection.style.display = "none";
 });
 
 cashOutSectionButton.addEventListener("click", function () {
   cashOutSection.style.display = "block";
   addMoneySection.style.display = "none";
+  transferSection.style.display = "none";
+});
+
+transferSectionButton.addEventListener("click", function () {
+  transferSection.style.display = "block";
+  addMoneySection.style.display = "none";
+  cashOutSection.style.display = "none";
 });

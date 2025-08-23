@@ -42,7 +42,7 @@
         <!-- card section -->
         <div class="grid grid-cols-3 gap-3">
           <div
-            class="text-center w-full border-[#0808081A] border-2 px-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2]"
+            class="text-center w-full border-[#0808081A] border-2 px-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2] cursor-pointer"
             id="add-money-section-btn"
           >
             <img src="./assets/wallet1.png" alt="" class="w-6 block" />
@@ -50,7 +50,7 @@
           </div>
 
           <div
-            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2]"
+            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2] cursor-pointer"
             id="cash-out-section-btn"
           >
             <img src="./assets/send1.png" alt="" class="w-6 block" />
@@ -58,7 +58,8 @@
           </div>
 
           <div
-            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2]"
+            id="transfer-money-btn"
+            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2] cursor-pointer"
           >
             <img src="./assets/money1.png" alt="" class="w-6 block" />
             <p class="text-base font-medium text-[#08080880]/70">
@@ -67,21 +68,21 @@
           </div>
 
           <div
-            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2]"
+            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2] cursor-pointer"
           >
             <img src="./assets/bonus1.png" alt="" class="w-6 block" />
             <p class="text-base font-medium text-[#08080880]/70">Get Bonus</p>
           </div>
 
           <div
-            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2]"
+            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2] cursor-pointer"
           >
             <img src="./assets/purse1.png" alt="" class="w-6 block" />
             <p class="text-base font-medium text-[#08080880]/70">Pay Bill</p>
           </div>
 
           <div
-            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2]"
+            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2] cursor-pointer"
           >
             <img src="./assets/transaction1.png" alt="" class="w-6 block" />
             <p class="text-base font-medium text-[#08080880]/70">
@@ -92,7 +93,7 @@
       </div>
 
       <!-- add money form -->
-      <div id="add-money-section" class="hidden">
+      <div id="add-money-section">
         <div>
           <h1 class="text-xl font-bold mt-8 mb-4">Add Money</h1>
         </div>
@@ -159,7 +160,7 @@
       </div>
 
       <!-- cash out form -->
-      <div id="cash-out-section">
+      <div id="cash-out-section" class="hidden">
         <div>
           <h1 class="text-xl font-bold mt-8 mb-4">Cash Out</h1>
         </div>
@@ -206,6 +207,59 @@
               class="w-full mt-7 text-center text-xl font-semibold text-white bg-[#0874F2] px-5 py-4 rounded-[32px]"
             >
               Withdraw Money
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Transfer Money -->
+      <div id="transfer-money-section" class="hidden">
+        <div>
+          <h1 class="text-xl font-bold mt-8 mb-4">Transfer Money</h1>
+        </div>
+
+        <div class="w-full bg-white p-6 rounded-3xl">
+          <form class="flex flex-col items-start">
+            <!-- Agent Number-->
+            <label
+              for="input-agent-number"
+              class="mb-3 text-[#080808] font-semibold"
+              >Agent Number
+            </label>
+            <input
+              id="input-agent-number"
+              type="number"
+              placeholder="Enter 11 digit number"
+              class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]"
+            />
+
+            <!-- input Amount -->
+            <label for="input-amount" class="mb-3 text-[#080808] font-semibold"
+              >Amount
+            </label>
+            <input
+              id="input-amount"
+              type="number"
+              placeholder="Add Amount"
+              class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]"
+            />
+
+            <!-- input pin number -->
+            <label for="pin-mumber" class="mb-3 text-[#080808] font-semibold"
+              >Pin Number</label
+            >
+            <input
+              id="input-pin-number"
+              type="password"
+              placeholder="Enter 4 digit pin number"
+              class="w-full px-5 py-4 rounded-[32px] bg-[#F4F5F7]"
+            />
+
+            <button
+              id="cash-out-btn"
+              class="w-full mt-7 text-center text-xl font-semibold text-white bg-[#0874F2] px-5 py-4 rounded-[32px]"
+            >
+              Send Now
             </button>
           </form>
         </div>
