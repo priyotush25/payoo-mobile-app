@@ -1,48 +1,38 @@
-let addMoneyButton = document.getElementById("add-money-btn");
-// let hello = document.getElementById("select-bank");
+// add money function
+function getInputValue(id) {
+  let getResult = document.getElementById(id).value;
+  let convertResult = parseInt(getResult);
 
-addMoneyButton.addEventListener("click", function (e) {
-  e.preventDefault();
+  return convertResult;
+}
 
-  let selectBank = selectBankName("select-bank");
-  let selectAccountNumber = selectItems("bank-account-number");
-  let selectMoney = selectItems("input-add-money");
-  let selectPin = selectItems("input-pin-number");
+document
+  .getElementById("add-money-btn")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    let selectBank = document.getElementById("select-bank");
+    let accountNumber = getInputValue("bank-account-number");
+    let addMoney = getInputValue("input-add-money");
+    let pinNumber = getInputValue("input-pin-number");
 
-  let selectBalance = availableBalance("balance");
+    // condition checking
+    if (accountNumber.toString().length < 11) {
+      alert("Invalid Account Number!");
+      return;
+    }
 
-  //   condition check
-  if (selectAccountNumber.toString().length < 11) {
-    alert("invalid account number");
-    return;
-  }
+    if (pinNumber !== 1234) {
+      alert("Invalid Pin Number!");
+      return;
+    }
 
-  if (selectPin !== 1234) {
-    alert("invalid pin");
-    return;
-  }
+    let availableBalance = document.getElementById("balance").innerText;
+    let convertBalance = parseInt(availableBalance);
 
-  let totalAmount = selectMoney + selectBalance;
+    let totalAmount = convertBalance + addMoney;
 
-  document.getElementById("balance").innerText = totalAmount;
-});
-
-// cash out operation
-let withdrawButton = document.getElementById("cashout-btn");
-
-withdrawButton.addEventListener("click", function (e) {
-  e.preventDefault();
-
-  let availableAmount = parseInt(document.getElementById("balance").innerText);
-
-  let cashOutAmount = parseInt(
-    document.getElementById("cashout-input-amount").value
-  );
-
-  let presentAmount = availableAmount - cashOutAmount;
-
-  document.getElementById("balance").innerText = presentAmount;
-});
+    document.getElementById("balance").innerText = totalAmount;
+  });
 
 // toggle operation
 
@@ -70,4 +60,42 @@ transferSectionButton.addEventListener("click", function () {
   transferSection.style.display = "block";
   addMoneySection.style.display = "none";
   cashOutSection.style.display = "none";
+});
+
+// cash out function
+
+function getValue(id) {
+  let inputValue = document.getElementById(id).value;
+  let covertInputValue = parseInt(inputValue);
+  return covertInputValue;
+}
+
+document.getElementById("cash-out-btn").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  let cashOutAgentNumber = getValue("agent-number");
+  let cashOutAmount = getValue("cash-out-input-amount");
+  let cashOutPinNumber = getValue("cash-out-pin-number");
+
+  let originalBalance = document.getElementById("balance");
+  let convertBalance = parseInt(originalBalance.innerText);
+
+  // condition checking
+  if (cashOutAgentNumber.toString().length < 11) {
+    alert("Invalid Agent Number");
+    return;
+  }
+
+  if (cashOutPinNumber !== 1234) {
+    alert("Invalid Pin Number");
+    return;
+  }
+
+  if (convertBalance < cashOutAmount) {
+    alert("Not Available Money");
+    return;
+  }
+
+  let presentBalance = convertBalance - cashOutAmount;
+  originalBalance.innerText = presentBalance;
 });
