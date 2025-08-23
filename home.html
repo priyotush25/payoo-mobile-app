@@ -34,29 +34,31 @@
         <div class="mt-8 mb-6">
           <h1 class="text-2xl font-bold">🔥 Welcome to Payooo!</h1>
           <p class="font-medium text-[#08080880] mt-3">
-            Enjoy easy and convenient financial services with us. Cashout charge
-            is low and
+            Enjoy easy and convenient financial services with us. Cash out
+            charge is low and
           </p>
         </div>
 
         <!-- card section -->
         <div class="grid grid-cols-3 gap-3">
           <div
-            class="text-center w-full border-[#0808081A] border-2 px-4 rounded-xl flex items-center justify-center flex-col gap-2"
+            class="text-center w-full border-[#0808081A] border-2 px-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2]"
+            id="add-money-section-btn"
           >
             <img src="./assets/wallet1.png" alt="" class="w-6 block" />
             <p class="text-base font-medium text-[#08080880]/70">Add Money</p>
           </div>
 
           <div
-            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2"
+            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2]"
+            id="cash-out-section-btn"
           >
             <img src="./assets/send1.png" alt="" class="w-6 block" />
-            <p class="text-base font-medium text-[#08080880]/70">Cashout</p>
+            <p class="text-base font-medium text-[#08080880]/70">Cash out</p>
           </div>
 
           <div
-            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2"
+            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2]"
           >
             <img src="./assets/money1.png" alt="" class="w-6 block" />
             <p class="text-base font-medium text-[#08080880]/70">
@@ -65,21 +67,21 @@
           </div>
 
           <div
-            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2"
+            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2]"
           >
             <img src="./assets/bonus1.png" alt="" class="w-6 block" />
             <p class="text-base font-medium text-[#08080880]/70">Get Bonus</p>
           </div>
 
           <div
-            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2"
+            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2]"
           >
             <img src="./assets/purse1.png" alt="" class="w-6 block" />
             <p class="text-base font-medium text-[#08080880]/70">Pay Bill</p>
           </div>
 
           <div
-            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2"
+            class="text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 hover:bg-[#0874f20d] hover:border-[#0874F2]"
           >
             <img src="./assets/transaction1.png" alt="" class="w-6 block" />
             <p class="text-base font-medium text-[#08080880]/70">
@@ -89,69 +91,124 @@
         </div>
       </div>
 
-      <!-- form section-->
-      <div>
-        <h1 class="text-xl font-bold mt-8 mb-4">Add Money</h1>
+      <!-- add money form -->
+      <div id="add-money-section" class="hidden">
+        <div>
+          <h1 class="text-xl font-bold mt-8 mb-4">Add Money</h1>
+        </div>
+
+        <div class="w-full bg-white p-6 rounded-3xl">
+          <form class="flex flex-col items-start">
+            <!-- select bank -->
+            <label for="select-bank" class="mb-3 text-[#080808] font-semibold"
+              >Select A Bank
+            </label>
+            <select
+              id="select-bank"
+              class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]"
+            >
+              <option value="Select Bank">Select Bank</option>
+              <option value="Dutch Bangla Bank">Dutch Bangla Bank</option>
+              <option value="IFIC Bank">IFIC Bank</option>
+              <option value="Janata Bank">Janata Bank</option>
+            </select>
+
+            <!-- input bank account number -->
+            <label
+              for="bank-account-number"
+              class="mb-3 text-[#080808] font-semibold"
+              >Bank Account Number
+            </label>
+            <input
+              id="bank-account-number"
+              type="number"
+              placeholder="Enter 11 digit account number"
+              class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]"
+            />
+
+            <!-- input number -->
+            <label for="mobile-number" class="mb-3 text-[#080808] font-semibold"
+              >Amount to Add
+            </label>
+            <input
+              id="input-add-money"
+              type="number"
+              placeholder="Add Amount to Money"
+              class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]"
+            />
+
+            <!-- input pin number -->
+            <label for="pin-mumber" class="mb-3 text-[#080808] font-semibold"
+              >Pin Number</label
+            >
+            <input
+              id="input-pin-number"
+              type="password"
+              placeholder="Enter 4 digit pin number"
+              class="w-full px-5 py-4 rounded-[32px] bg-[#F4F5F7]"
+            />
+
+            <button
+              id="add-money-btn"
+              class="w-full mt-7 text-center text-xl font-semibold text-white bg-[#0874F2] px-5 py-4 rounded-[32px]"
+            >
+              Add Money
+            </button>
+          </form>
+        </div>
       </div>
 
-      <div class="w-full bg-white p-6 rounded-3xl">
-        <form class="flex flex-col items-start">
-          <!-- select bank -->
-          <label for="select-bank" class="mb-3 text-[#080808] font-semibold"
-            >Select A Bank
-          </label>
-          <select
-            id="select-bank"
-            class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]"
-          >
-            <option value="Select Bank">Select Bank</option>
-            <option value="Dutch Bangla Bank">Dutch Bangla Bank</option>
-            <option value="IFIC Bank">IFIC Bank</option>
-            <option value="Janata Bank">Janata Bank</option>
-          </select>
+      <!-- cash out form -->
+      <div id="cash-out-section">
+        <div>
+          <h1 class="text-xl font-bold mt-8 mb-4">Cash Out</h1>
+        </div>
 
-          <!-- input bank account number -->
-          <label
-            for="bank-account-number"
-            class="mb-3 text-[#080808] font-semibold"
-            >Bank Account Number
-          </label>
-          <input
-            id="bank-account-number"
-            type="number"
-            placeholder="Enter 11 digit account number"
-            class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]"
-          />
+        <div class="w-full bg-white p-6 rounded-3xl">
+          <form class="flex flex-col items-start">
+            <!-- Agent Number-->
+            <label
+              for="input-agent-number"
+              class="mb-3 text-[#080808] font-semibold"
+              >Agent Number
+            </label>
+            <input
+              id="input-agent-number"
+              type="number"
+              placeholder="Enter 11 digit number"
+              class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]"
+            />
 
-          <!-- input number -->
-          <label for="mobile-number" class="mb-3 text-[#080808] font-semibold"
-            >Amount to Add
-          </label>
-          <input
-            id="input-add-money"
-            type="number"
-            placeholder="Add Amount to Money"
-            class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]"
-          />
+            <!-- input Amount -->
+            <label for="input-amount" class="mb-3 text-[#080808] font-semibold"
+              >Amount
+            </label>
+            <input
+              id="input-amount"
+              type="number"
+              placeholder="Add Amount"
+              class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]"
+            />
 
-          <!-- input pin number -->
-          <label for="pin-mumber" class="mb-3 text-[#080808] font-semibold"
-            >Pin Number</label
-          >
-          <input
-            id="input-pin-number"
-            type="password"
-            placeholder="Enter 4 digit pin number"
-            class="w-full px-5 py-4 rounded-[32px] bg-[#F4F5F7]"
-          />
+            <!-- input pin number -->
+            <label for="pin-mumber" class="mb-3 text-[#080808] font-semibold"
+              >Pin Number</label
+            >
+            <input
+              id="input-pin-number"
+              type="password"
+              placeholder="Enter 4 digit pin number"
+              class="w-full px-5 py-4 rounded-[32px] bg-[#F4F5F7]"
+            />
 
-          <button
-            id="add-money-btn"
-            class="w-full mt-7 text-center text-xl font-semibold text-white bg-[#0874F2] px-5 py-4 rounded-[32px]"
-          >
-            Add Money
-          </button>
-        </form>
+            <button
+              id="cash-out-btn"
+              class="w-full mt-7 text-center text-xl font-semibold text-white bg-[#0874F2] px-5 py-4 rounded-[32px]"
+            >
+              Withdraw Money
+            </button>
+          </form>
+        </div>
       </div>
     </main>
 

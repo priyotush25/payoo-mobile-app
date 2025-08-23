@@ -17,7 +17,7 @@ addMoneyButton.addEventListener("click", function (e) {
     return;
   }
 
-  if (selectPin !== "1234") {
+  if (selectPin !== 1234) {
     alert("invalid pin");
     return;
   }
@@ -33,4 +33,22 @@ addMoneyButton.addEventListener("click", function (e) {
     selectPin,
     selectBalance
   );
+});
+
+// toggle operation
+
+let addMoneySection = document.getElementById("add-money-section");
+let cashOutSection = document.getElementById("cash-out-section");
+
+let addMoneySectionButton = document.getElementById("add-money-section-btn");
+let cashOutSectionButton = document.getElementById("cash-out-section-btn");
+
+addMoneySectionButton.addEventListener("click", function () {
+  addMoneySection.style.display = "block";
+  cashOutSection.style.display = "none";
+});
+
+cashOutSectionButton.addEventListener("click", function () {
+  cashOutSection.style.display = "block";
+  addMoneySection.style.display = "none";
 });
