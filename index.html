@@ -24,6 +24,7 @@
           >Mobile Number
         </label>
         <input
+          id="inputNumber"
           type="tel"
           id="mobile-number"
           placeholder="Enter your number"
@@ -34,18 +35,23 @@
           >4 Digit Pin</label
         >
         <input
-          type="number"
+          id="inputPin"
+          type="password"
           id="pin-mumber"
           placeholder="Enter 4 Digit Pin"
-          class="w-full px-5 py-4 rounded-[32px] mb-5 bg-[#F4F5F7]"
+          class="w-full px-5 py-4 rounded-[32px] bg-[#F4F5F7]"
         />
 
         <button
-          class="w-full text-center text-xl font-semibold text-white bg-[#0874F2] px-5 py-4 rounded-[32px]"
+          id="loginButton"
+          class="w-full mt-7 text-center text-xl font-semibold text-white bg-[#0874F2] px-5 py-4 rounded-[32px]"
         >
           Login
         </button>
       </form>
     </div>
+
+    <!-- script js -->
+    <script src="./js/script.js"></script>
   </body>
 </html>
