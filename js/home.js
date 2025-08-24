@@ -19,6 +19,8 @@ function getInputValue(id) {
   return convertResult;
 }
 
+let transactionData = [];
+
 document
   .getElementById("add-money-btn")
   .addEventListener("click", function (e) {
@@ -44,6 +46,13 @@ document
     let totalAmount = convertBalance + addMoney;
 
     setInnerText(totalAmount);
+
+    const data = {
+      name: "Add Money",
+      date: new Date().toLocaleTimeString(),
+    };
+
+    transactionData.push(data);
   });
 
 // cash out function
@@ -81,6 +90,13 @@ document.getElementById("cash-out-btn").addEventListener("click", function (e) {
   let presentBalance = convertBalance - cashOutAmount;
 
   setInnerText(presentBalance);
+
+  const data = {
+    name: "Cash Out",
+    date: new Date().toLocaleTimeString(),
+  };
+
+  transactionData.push(data);
 });
 
 // default section show
@@ -101,21 +117,25 @@ function toggleFeature(id) {
   document.getElementById(id).style.display = "block";
 }
 
+// toggle handle
+function toggleHandle(id) {
+  let btns = document.getElementsByClassName("form-btn");
+  for (let btn of btns) {
+    btn.classList.remove("border-[#0874F2]", "bg-[#0874f20d]");
+  }
+
+  document
+    .getElementById(id)
+    .classList.add("border-[#0874F2]", "bg-[#0874f20d]");
+}
+
 // add money button
 document
   .getElementById("add-money-section-btn")
   .addEventListener("click", function () {
     toggleFeature("add-money-section");
 
-    // btn hover
-    let btns = document.getElementsByClassName("form-btn");
-    for (let btn of btns) {
-      btn.classList.remove("border-[#0874F2]", "bg-[#0874f20d]");
-    }
-
-    document
-      .getElementById("add-money-section-btn")
-      .classList.add("border-[#0874F2]", "bg-[#0874f20d]");
+    toggleHandle("add-money-section-btn");
   });
 
 // cash out button
@@ -124,15 +144,7 @@ document
   .addEventListener("click", function () {
     toggleFeature("cash-out-section");
 
-    // btn hover
-    let btns = document.getElementsByClassName("form-btn");
-    for (let btn of btns) {
-      btn.classList.remove("border-[#0874F2]", "bg-[#0874f20d]");
-    }
-
-    document
-      .getElementById("cash-out-section-btn")
-      .classList.add("border-[#0874F2]", "bg-[#0874f20d]");
+    toggleHandle("cash-out-section-btn");
   });
 
 // transfer button
@@ -141,45 +153,21 @@ document
   .addEventListener("click", function () {
     toggleFeature("transfer-money-section");
 
-    // btn hover
-    let btns = document.getElementsByClassName("form-btn");
-    for (let btn of btns) {
-      btn.classList.remove("border-[#0874F2]", "bg-[#0874f20d]");
-    }
-
-    document
-      .getElementById("transfer-money-btn")
-      .classList.add("border-[#0874F2]", "bg-[#0874f20d]");
+    toggleHandle("transfer-money-btn");
   });
 
 // get bonus button
 document.getElementById("get-bonus-btn").addEventListener("click", function () {
   toggleFeature("get-bonus-section");
 
-  // btn hover
-  let btns = document.getElementsByClassName("form-btn");
-  for (let btn of btns) {
-    btn.classList.remove("border-[#0874F2]", "bg-[#0874f20d]");
-  }
-
-  document
-    .getElementById("get-bonus-btn")
-    .classList.add("border-[#0874F2]", "bg-[#0874f20d]");
+  toggleHandle("get-bonus-btn");
 });
 
 // pay bill button
 document.getElementById("pay-bill-btn").addEventListener("click", function () {
   toggleFeature("pay-bill-section");
 
-  // btn hover
-  let btns = document.getElementsByClassName("form-btn");
-  for (let btn of btns) {
-    btn.classList.remove("border-[#0874F2]", "bg-[#0874f20d]");
-  }
-
-  document
-    .getElementById("pay-bill-btn")
-    .classList.add("border-[#0874F2]", "bg-[#0874f20d]");
+  toggleHandle("pay-bill-btn");
 });
 
 // transaction-section button
@@ -188,13 +176,32 @@ document
   .addEventListener("click", function () {
     toggleFeature("transaction-section");
 
-    // btn hover
-    let btns = document.getElementsByClassName("form-btn");
-    for (let btn of btns) {
-      btn.classList.remove("border-[#0874F2]", "bg-[#0874f20d]");
-    }
+    toggleHandle("transaction-btn");
 
-    document
-      .getElementById("transaction-btn")
-      .classList.add("border-[#0874F2]", "bg-[#0874f20d]");
+    document.getElementById("transaction-container").innerText = "";
+
+    for (let data of transactionData) {
+      let div = document.createElement("div");
+      div.innerHTML = `
+
+          <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#FFFFFF] border-[#0808081a] border-2">
+           <div class="flex items-center gap-2" >
+             <div>
+              <img src="./assets/wallet1.png" alt="" class="p-3 rounded-full bg-[#0808080D]">
+             </div>
+            <div>
+              <h3 class="text-[#080808b3] font-semibold">${data.name}</h3>
+              <p class="text-[#080808b3] font-normal">${data.date}</p>
+            </div>
+
+
+           </div>
+            <div>
+               <img src="./assets/dot.svg" alt="">
+            </div>
+          </div>
+    `;
+
+      document.getElementById("transaction-container").appendChild(div);
+    }
   });
