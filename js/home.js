@@ -84,30 +84,39 @@ document.getElementById("cash-out-btn").addEventListener("click", function (e) {
   setInnerText(presentBalance);
 });
 
+// default section show
+let forms = document.getElementsByClassName("form");
+
+for (let form of forms) {
+  form.style.display = "none";
+  document.getElementById("add-money-section").style.display = "block";
+}
+
 // toggle features
 function toggleFeature(id) {
   let forms = document.getElementsByClassName("form");
   for (let form of forms) {
     form.style.display = "none";
-
-    console.log(form);
   }
 
   document.getElementById(id).style.display = "block";
 }
 
+// add money button
 document
   .getElementById("add-money-section-btn")
   .addEventListener("click", function () {
     toggleFeature("add-money-section");
   });
 
+// cash out button
 document
   .getElementById("cash-out-section-btn")
   .addEventListener("click", function () {
     toggleFeature("cash-out-section");
   });
 
+// transfer button
 document
   .getElementById("transfer-money-btn")
   .addEventListener("click", function () {
