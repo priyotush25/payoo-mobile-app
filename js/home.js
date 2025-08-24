@@ -47,7 +47,6 @@ document
   });
 
 // cash out function
-
 function getValue(id) {
   let inputValue = document.getElementById(id).value;
   let covertInputValue = parseInt(inputValue);
@@ -89,7 +88,7 @@ let forms = document.getElementsByClassName("form");
 
 for (let form of forms) {
   form.style.display = "none";
-  document.getElementById("add-money-section").style.display = "block";
+  document.getElementById("transaction-section").style.display = "block";
 }
 
 // toggle features
@@ -167,3 +166,35 @@ document.getElementById("get-bonus-btn").addEventListener("click", function () {
     .getElementById("get-bonus-btn")
     .classList.add("border-[#0874F2]", "bg-[#0874f20d]");
 });
+
+// pay bill button
+document.getElementById("pay-bill-btn").addEventListener("click", function () {
+  toggleFeature("pay-bill-section");
+
+  // btn hover
+  let btns = document.getElementsByClassName("form-btn");
+  for (let btn of btns) {
+    btn.classList.remove("border-[#0874F2]", "bg-[#0874f20d]");
+  }
+
+  document
+    .getElementById("pay-bill-btn")
+    .classList.add("border-[#0874F2]", "bg-[#0874f20d]");
+});
+
+// transaction-section button
+document
+  .getElementById("transaction-btn")
+  .addEventListener("click", function () {
+    toggleFeature("transaction-section");
+
+    // btn hover
+    let btns = document.getElementsByClassName("form-btn");
+    for (let btn of btns) {
+      btn.classList.remove("border-[#0874F2]", "bg-[#0874f20d]");
+    }
+
+    document
+      .getElementById("transaction-btn")
+      .classList.add("border-[#0874F2]", "bg-[#0874f20d]");
+  });

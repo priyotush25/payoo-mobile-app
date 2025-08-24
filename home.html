@@ -24,8 +24,9 @@
             </div>
           </div>
           <button
-            class="border-[#0808081a] text-[#08080880] rounded-lg border-2 px-6 font-medium py-3"
+            class="border-[#0808081a] text-[#08080880] rounded-lg border-2 px-6 font-medium py-3 flex items-center gap-2"
           >
+            <img src="./assets/logout.svg" alt="">
             Lout Out
           </button>
         </div>
@@ -77,12 +78,13 @@
 
           <div
             class="form-btn text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 cursor-pointer"
+            id="pay-bill-btn"
           >
             <img src="./assets/purse1.png" alt="" class="w-6 block" />
             <p class="text-base font-medium text-[#08080880]/70">Pay Bill</p>
           </div>
 
-          <div
+          <div id="transaction-btn"
             class="form-btn text-center w-full border-[#0808081A] border-2 p-4 rounded-xl flex items-center justify-center flex-col gap-2 cursor-pointer"
           >
             <img src="./assets/transaction1.png" alt="" class="w-6 block" />
@@ -299,6 +301,164 @@
             >
               Get Bonus
             </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- pay bill form -->
+      <div id="pay-bill-section" class="form">
+        <div>
+          <h1 class="text-xl font-bold mt-8 mb-4">Pay Bill</h1>
+        </div>
+
+        <div class="w-full bg-white p-6 rounded-3xl">
+          <form class="flex flex-col items-start">
+            <!-- select bank -->
+            <label for="select-bank" class="mb-3 text-[#080808] font-semibold"
+              >Select To Pay
+            </label>
+            <select
+              id="select-bank"
+              class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]"
+            >
+              <option value="Select Bank">Select Bank</option>
+              <option value="Dutch Bangla Bank">Dutch Bangla Bank</option>
+              <option value="IFIC Bank">IFIC Bank</option>
+              <option value="Janata Bank">Janata Bank</option>
+            </select>
+
+            <!-- input bank account number -->
+            <label
+              for="bank-account-number"
+              class="mb-3 text-[#080808] font-semibold"
+              >Biller Account Number
+            </label>
+            <input
+              id="bank-account-number"
+              type="number"
+              placeholder="Enter 11 digit account number"
+              class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]"
+            />
+
+            <!-- input number -->
+            <label for="mobile-number" class="mb-3 text-[#080808] font-semibold"
+              >Amount to Pay
+            </label>
+            <input
+              id="input-add-money"
+              type="number"
+              placeholder="Add Amount to pay"
+              class="w-full px-5 py-4 rounded-[32px] mb-4 bg-[#F4F5F7]"
+            />
+
+            <!-- input pin number -->
+            <label for="pin-mumber" class="mb-3 text-[#080808] font-semibold"
+              >Pin Number</label
+            >
+            <input
+              id="input-pin-number"
+              type="password"
+              placeholder="Enter 4 digit pin number"
+              class="w-full px-5 py-4 rounded-[32px] bg-[#F4F5F7]"
+            />
+
+            <button
+              id="add-money-btn"
+              class="w-full mt-7 text-center text-xl font-semibold text-white bg-[#0874F2] px-5 py-4 rounded-[32px]"
+            >
+              Pay Now
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Transaction form -->
+      <div id="transaction-section" class="form">
+        <div>
+          <h1 class="text-xl font-bold mt-8 mb-4">Transaction History</h1>
+        </div>
+
+        <div class="flex flex-col gap-3">
+
+          <!-- card -->
+          <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#FFFFFF] border-[#0808081a] border-2">
+           <div class="flex items-center gap-2" >
+             <div>
+              <img src="./assets/wallet1.png" alt="" class="p-3 rounded-full bg-[#0808080D]">
+             </div>
+            <div>
+              <h3 class="text-[#080808b3] font-semibold">Electricity Bill</h3>
+              <p class="text-[#080808b3] font-normal">Today 01:44 AM</p>
+            </div>
+
+
+           </div>
+            <div>
+              <img src="./assets/dot.svg" alt="">
+            </div>
+          </div>
+
+
+          <!-- card -->
+          <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#FFFFFF] border-[#0808081a] border-2">
+           <div class="flex items-center gap-2" >
+             <div>
+              <img src="./assets/wallet1.png" alt="" class="p-3 rounded-full bg-[#0808080D]">
+             </div>
+            <div>
+              <h3 class="text-[#080808b3] font-semibold">Electricity Bill</h3>
+              <p class="text-[#080808b3] font-normal">Today 01:44 AM</p>
+            </div>
+
+
+           </div>
+            <div>
+               <img src="./assets/dot.svg" alt="">
+            </div>
+          </div>
+
+
+          <!-- card -->
+          <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#FFFFFF] border-[#0808081a] border-2">
+           <div class="flex items-center gap-2" >
+             <div>
+              <img src="./assets/wallet1.png" alt="" class="p-3 rounded-full bg-[#0808080D]">
+             </div>
+            <div>
+              <h3 class="text-[#080808b3] font-semibold">Electricity Bill</h3>
+              <p class="text-[#080808b3] font-normal">Today 01:44 AM</p>
+            </div>
+
+
+           </div>
+            <div>
+              <img src="./assets/dot.svg" alt="">
+            </div>
+          </div>
+
+          <!-- card -->
+          <div class="flex items-center justify-between px-4 py-3 rounded-xl bg-[#FFFFFF] border-[#0808081a] border-2">
+           <div class="flex items-center gap-2" >
+             <div>
+              <img src="./assets/wallet1.png" alt="" class="p-3 rounded-full bg-[#0808080D]">
+             </div>
+            <div>
+              <h3 class="text-[#080808b3] font-semibold">Electricity Bill</h3>
+              <p class="text-[#080808b3] font-normal">Today 01:44 AM</p>
+            </div>
+
+
+           </div>
+            <div>
+               <img src="./assets/dot.svg" alt="">
+            </div>
+          </div>
+
+
+
+        </div>
+
+       
           </form>
         </div>
       </div>
