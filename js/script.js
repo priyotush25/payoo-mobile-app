@@ -13,7 +13,7 @@ loginButton.addEventListener("click", function (e) {
   console.log(intInputNumber, intInputPin);
 
   let mobileNumber = 12345678910;
-  let pinNumber = 123;
+  let pinNumber = 1234;
 
   if (intInputNumber === mobileNumber && intInputPin === pinNumber) {
     window.location.href = "home.html";

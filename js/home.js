@@ -21,6 +21,7 @@ function getInputValue(id) {
 
 let transactionData = [];
 
+// add money form
 document
   .getElementById("add-money-btn")
   .addEventListener("click", function (e) {
@@ -38,6 +39,11 @@ document
 
     if (pinNumber !== 1234) {
       alert("Invalid Pin Number!");
+      return;
+    }
+
+    if (addMoney <= 0) {
+      alert("Invalid Amount!");
       return;
     }
 
