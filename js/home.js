@@ -107,6 +107,16 @@ document
   .getElementById("add-money-section-btn")
   .addEventListener("click", function () {
     toggleFeature("add-money-section");
+
+    // btn hover
+    let btns = document.getElementsByClassName("form-btn");
+    for (let btn of btns) {
+      btn.classList.remove("border-[#0874F2]", "bg-[#0874f20d]");
+    }
+
+    document
+      .getElementById("add-money-section-btn")
+      .classList.add("border-[#0874F2]", "bg-[#0874f20d]");
   });
 
 // cash out button
@@ -114,6 +124,16 @@ document
   .getElementById("cash-out-section-btn")
   .addEventListener("click", function () {
     toggleFeature("cash-out-section");
+
+    // btn hover
+    let btns = document.getElementsByClassName("form-btn");
+    for (let btn of btns) {
+      btn.classList.remove("border-[#0874F2]", "bg-[#0874f20d]");
+    }
+
+    document
+      .getElementById("cash-out-section-btn")
+      .classList.add("border-[#0874F2]", "bg-[#0874f20d]");
   });
 
 // transfer button
@@ -121,4 +141,29 @@ document
   .getElementById("transfer-money-btn")
   .addEventListener("click", function () {
     toggleFeature("transfer-money-section");
+
+    // btn hover
+    let btns = document.getElementsByClassName("form-btn");
+    for (let btn of btns) {
+      btn.classList.remove("border-[#0874F2]", "bg-[#0874f20d]");
+    }
+
+    document
+      .getElementById("transfer-money-btn")
+      .classList.add("border-[#0874F2]", "bg-[#0874f20d]");
   });
+
+// get bonus button
+document.getElementById("get-bonus-btn").addEventListener("click", function () {
+  toggleFeature("get-bonus-section");
+
+  // btn hover
+  let btns = document.getElementsByClassName("form-btn");
+  for (let btn of btns) {
+    btn.classList.remove("border-[#0874F2]", "bg-[#0874f20d]");
+  }
+
+  document
+    .getElementById("get-bonus-btn")
+    .classList.add("border-[#0874F2]", "bg-[#0874f20d]");
+});
